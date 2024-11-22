@@ -171,6 +171,14 @@ body {
   }
 }
 
+body {
+  overflow-x: hidden;
+}
+
+img, .cloud-ahead, .cloud {
+  max-width: 100%;
+  height: auto;
+}
 
 
 /* Quote Section */
