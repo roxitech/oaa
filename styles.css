@@ -100,7 +100,7 @@ body {
   height: 400px;
   
   position: absolute;
-  top: -280%; /* Move higher */
+  top: -200%; /* Move higher */
   opacity: 1;
   left: -100%; /* Start off-screen to the left */
   z-index: 2;
@@ -127,7 +127,7 @@ body {
     transform: translateX(-100%); /* Start fully off-screen to the left */
   }
   100% {
-    transform: translateX(100%); /* Move fully off-screen to the right */
+    transform: translateX(150%); /* Move fully off-screen to the right */
   }
 }
 
