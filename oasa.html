@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manastirea Oasa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#despre"><img src="butoane/despre.png"></a></li>
+                <li><a href="#istoric"><img src="butoane/istoric.png"></a></li>
+                <li><a href="#orasul"><img src="butoane/obstea.png"></a></li>
+                <li><a href="#tabere"><img src="butoane/taberele.png"></a></li>
+                <li><a href="#stiri"><img src="butoane/stiri.png"></a></li>
+                <li><a href="#contact"><img src="butoane/contact.png"></a></li>
+                <li><a href="#magazin"><img src="butoane/magazin.png"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+       <div class="image-container">
+	  
+  <img src="oasa image2.png" alt="Background Image" class="background">
+  
+  <div class="overlay-text">
+    <h1>Manastirea Oașa</h1>
+    <p>Explore the serene landscapes </p>
+	<p>Explore the serene landscapes </p>
+      </div>
+  
+  <div id="animatedClouds">
+    <img src="white cloud.png" alt="Cloud" class="cloud">
+  </div>
+</div>
+
+<!-- New cloud animation ahead of the first cloud -->
+<div class="animated-cloud-ahead">
+  <img src="white cloud.png" alt="Cloud Ahead" class="cloud-ahead">
+</div>
+            <div class="image-section">
+                <img src="forest-image.png" alt="Background Image" class="background">
+            </div>
+        
+		<!-- Two-column layout below the second image -->
+<div class="two-columns">
+  <div class="column text-column">
+    <h2>About Oașa Monastery</h2>
+    <p>
+      Oașa Monastery is a serene retreat located in the heart of the Carpathian Mountains. Surrounded by breathtaking landscapes, 
+      it offers visitors a spiritual escape and a connection with nature.
+    </p>
+  </div>
+  <div class="column image-column">
+    <img src="istoric.png" alt="Mountain Landscape">
+  </div>
+</div>
+
+        <section class="quote">
+            <blockquote>
+                "În munți găsești liniște și pace, un loc unde sufletul respiră."
+            </blockquote>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Mănăstirea Oașa. Toate drepturile rezervate.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+  // Get the animated image element
+  const animatedImage = document.getElementById("animatedImage");
+
+  // Initialize position and speed
+  let position = 100; // Start at 100% right
+  const speed = 0.5; // Adjust speed for slower or faster movement
+
+  function animate() {
+    position -= speed; // Move left
+    animatedImage.style.right = `${position}%`; // Update position
+
+    // Reset to the right when it goes off-screen
+    if (position <= -50) {
+      position = 1000;
+    }
+
+    requestAnimationFrame(animate); // Call animate for the next frame
+  }
+
+  // Start the animation
+  animate();
+
+
+</script>
