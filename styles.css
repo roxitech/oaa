@@ -99,7 +99,7 @@ body {
   height: 400px;
   object-fit: contain;
   position: absolute;
-  top: -50%; /* Move higher */
+  top: -150%; /* Move higher */
   opacity: 1;
   left: -100%; /* Start off-screen to the left */
   z-index: 2;
