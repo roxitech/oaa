@@ -164,9 +164,7 @@ body {
     margin-top: -100px; /* Reduce space for desktop */
   }
 
-  .overlay-text {
-    bottom: 20%; /* Adjust overlay higher for desktop */
-  }
+
 }
 
 
