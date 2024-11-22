@@ -65,7 +65,7 @@ body {
     padding: 8px 16px; /* Adjust padding for smaller screens */
   }
     .cloud-ahead {
-  top: -100%;
+  bottom: -100%;
 }
 }
 
