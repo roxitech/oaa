@@ -89,6 +89,7 @@ body {
 .animated-cloud-ahead {
   position: relative;
   width: 100%;
+    top: -200%; /* Move higher */
   height: auto;
   z-index: 3;
   animation: slideAhead 5s infinite linear;
