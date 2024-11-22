@@ -51,7 +51,8 @@ body {
   left: 20%;
   transform: translateX(-50%);
   color: black;
-
+  padding: 10px 20px;
+  border-radius: 8px;
   
   font-size: 1.2rem;
 }
@@ -88,7 +89,7 @@ body {
 .animated-cloud-ahead {
   position: relative;
   width: 100%;
-    top: -200%; /* Move higher */
+    top: -250%; /* Move higher */
   height: auto;
   z-index: 3;
   animation: slideAhead 5s infinite linear;
