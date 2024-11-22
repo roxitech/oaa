@@ -83,7 +83,7 @@ body {
   object-fit: contain;
   opacity: 1;
   position: absolute;
-  top: -80%; /* Positioning cloud exactly where you want it */
+  top: -70%; /* Positioning cloud exactly where you want it */
 }
 
 .animated-cloud-ahead {
