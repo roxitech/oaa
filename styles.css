@@ -47,7 +47,7 @@ body {
 /* Default for desktop: text higher */
 .overlay-text {
   position: absolute;
-  bottom: 20%; /* Higher on desktop */
+  bottom: 50%; /* Higher on desktop */
   left: 50%;
   transform: translateX(-50%);
   color: black;
@@ -110,7 +110,7 @@ body {
 
 .image-section {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 @keyframes slideLeft {
