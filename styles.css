@@ -169,6 +169,16 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .two-columns {
+    flex-direction: column;
+  }
+  
+  .column {
+    width: 100%;
+  }
+}
+
 body {
   overflow-x: hidden;
 }
