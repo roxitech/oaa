@@ -60,10 +60,11 @@ body {
 /* Responsive for mobile: text lower */
 @media (max-width: 768px) {
   .overlay-text {
-    bottom: -25%; /* Lower on mobile */
+    bottom: -15%; /* Lower on mobile */
     font-size: 1rem; /* Slightly smaller font */
     padding: 8px 16px; /* Adjust padding for smaller screens */
   }
+}
 
 #animatedClouds {
   position: absolute;
@@ -98,21 +99,13 @@ body {
   height: 400px;
   object-fit: contain;
   position: absolute;
-  top: -80%; /* Default for desktop */
+  top: -80%;
   opacity: 1;
   left: -100%; /* Start off-screen to the left */
   z-index: 2;
   animation: slideRight 5s infinite linear; /* Move from left to right */
 }
-    
-@media (max-width: 768px) {
-  .cloud-ahead {
-    top: -20% !important; /* Move higher on mobile */
-  }
 }
-
-
-
 
 .image-section {
   width: 100%;
@@ -170,6 +163,10 @@ body {
 @media (min-width: 768px) {
   .image-section {
     margin-top: -100px; /* Reduce space for desktop */
+  }
+
+  .overlay-text {
+    bottom: 20%; /* Adjust overlay higher for desktop */
   }
 }
 
