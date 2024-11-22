@@ -161,11 +161,11 @@ body {
 
 @media (min-width: 768px) {
   .image-section {
-    margin-top: -100px; /* Reduce space for desktop */
+    top: -150px; /* Reduce space for desktop */
   }
 
   .overlay-text {
-    bottom: 30%; /* Adjust overlay higher for desktop */
+    bottom: 70%; /* Adjust overlay higher for desktop */
   }
 }
 
