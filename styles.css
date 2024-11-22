@@ -48,7 +48,7 @@ body {
 .overlay-text {
   position: absolute;
   bottom: 50%; /* Higher on desktop */
-  left: 50%;
+  left: 20%;
   transform: translateX(-50%);
   color: black;
 
