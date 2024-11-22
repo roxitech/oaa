@@ -64,10 +64,6 @@ body {
     font-size: 1rem; /* Slightly smaller font */
     padding: 8px 16px; /* Adjust padding for smaller screens */
   }
-    .cloud-ahead {
-  bottom: -100%;
-}
-}
 
 #animatedClouds {
   position: absolute;
@@ -109,11 +105,13 @@ body {
   animation: slideRight 5s infinite linear; /* Move from left to right */
 }
 
+/* Force different position on mobile */
 @media (max-width: 768px) {
   .cloud-ahead {
-    top: -100%; /* Move higher on mobile */
+    top: -20% !important; /* Move significantly higher on mobile */
   }
 }
+
 
 
 .image-section {
