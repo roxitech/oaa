@@ -99,13 +99,29 @@ body {
   height: 400px;
   object-fit: contain;
   position: absolute;
-  top: -80%;
+  top: -80%; /* Default for desktop */
   opacity: 1;
   left: -100%; /* Start off-screen to the left */
   z-index: 2;
   animation: slideRight 5s infinite linear; /* Move from left to right */
 }
+
+/* Responsive: Adjust cloud position for mobile */
+@media (max-width: 768px) {
+  .cloud-ahead {
+    top: -20%; /* Move higher on mobile */
+  }
 }
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%); /* Start fully off-screen to the left */
+  }
+  100% {
+    transform: translateX(100%); /* Move fully off-screen to the right */
+  }
+}
+
 
 .image-section {
   width: 100%;
@@ -121,14 +137,6 @@ body {
   }
 }
 
-@keyframes slideRight {
-  0% {
-    transform: translateX(-100%); /* Start fully off-screen to the left */
-  }
-  100% {
-    transform: translateX(200%); /* Move fully off-screen to the right */
-  }
-}
 
 
 
