@@ -83,7 +83,7 @@ body {
   object-fit: contain;
   opacity: 1;
   position: absolute;
-  top: -110%; /* Positioning cloud exactly where you want it */
+  top: -120%; /* Positioning cloud exactly where you want it */
 }
 
 .animated-cloud-ahead {
@@ -99,7 +99,7 @@ body {
   height: 400px;
 
   position: absolute;
-  top: -100%; /* Move higher */
+  top: -200%; /* Move higher */
   opacity: 1;
   left: -100%; /* Start off-screen to the left */
   z-index: 2;
