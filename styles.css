@@ -47,7 +47,7 @@ body {
 /* Default for desktop: text higher */
 .overlay-text {
   position: absolute;
-  bottom: 20%; /* Higher on desktop */
+  bottom: 50%; /* Higher on desktop */
   left: 50%;
   transform: translateX(-50%);
   color: black;
@@ -83,7 +83,7 @@ body {
   object-fit: contain;
   opacity: 1;
   position: absolute;
-  top: -70%; /* Positioning cloud exactly where you want it */
+  top: -60%; /* Positioning cloud exactly where you want it */
 }
 
 .animated-cloud-ahead {
@@ -100,7 +100,7 @@ body {
   height: 400px;
 
   position: absolute;
-  top: -200%; /* Move higher */
+  top: -250%; /* Move higher */
   opacity: 1;
   left: -100%; /* Start off-screen to the left */
   z-index: 2;
