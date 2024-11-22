@@ -104,13 +104,13 @@ body {
   z-index: 2;
   animation: slideRight 5s infinite linear; /* Move from left to right */
 }
-
-/* Force different position on mobile */
+    
 @media (max-width: 768px) {
   .cloud-ahead {
-    top: -20% !important; /* Move significantly higher on mobile */
+    top: -20% !important; /* Move higher on mobile */
   }
 }
+
 
 
 
@@ -171,8 +171,6 @@ body {
   .image-section {
     margin-top: -100px; /* Reduce space for desktop */
   }
-
-
 }
 
 
