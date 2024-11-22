@@ -47,21 +47,20 @@ body {
 /* Default for desktop: text higher */
 .overlay-text {
   position: absolute;
-  bottom: 50%; /* Higher on desktop */
-  left: 20%;
+  bottom: 20%; /* Higher on desktop */
+  left: 50%;
   transform: translateX(-50%);
   color: black;
+  text-align: center;
   padding: 10px 20px;
   border-radius: 8px;
-  
   font-size: 1.2rem;
 }
 
 /* Responsive for mobile: text lower */
 @media (max-width: 768px) {
   .overlay-text {
-    bottom: -20%; /* Lower on mobile */
-    text-align: center;
+    bottom: -15%; /* Lower on mobile */
     font-size: 1rem; /* Slightly smaller font */
     padding: 8px 16px; /* Adjust padding for smaller screens */
   }
@@ -131,8 +130,6 @@ body {
     transform: translateX(200%); /* Move fully off-screen to the right */
   }
 }
-
-
 
 .two-columns {
   display: flex;
