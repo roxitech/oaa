@@ -117,9 +117,14 @@ body {
 @keyframes slideLeft {
   0% {
     transform: translateX(100%);
+      opacity: 1;
+  }
+    80% {
+    opacity: 1; /* Fully visible for most of the animation */
   }
   100% {
     transform: translateX(-100%);
+      opacity: 0; /* Gradually fade out */
   }
 }
 
