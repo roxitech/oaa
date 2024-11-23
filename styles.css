@@ -116,7 +116,7 @@ body {
 
 @keyframes slideLeft {
   0% {
-    transform: translateX(190%);
+    transform: translateX(100%);
   }
   100% {
     transform: translateX(-100%);
@@ -125,10 +125,10 @@ body {
 
 @keyframes slideRight {
   0% {
-    transform: translateX(0%); /* Start fully off-screen to the left */
+    transform: translateX(-100%); /* Start fully off-screen to the left */
   }
   100% {
-    transform: translateX(0%); /* Move fully off-screen to the right */
+    transform: translateX(100%); /* Move fully off-screen to the right */
   }
 }
 
