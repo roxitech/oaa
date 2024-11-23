@@ -10,83 +10,71 @@
     <header class="header">
         <nav class="navbar">
             <ul>
-                <li><a href="#despre"><img src="DESPRE.png"></a></li>
-                <li><a href="#istoric"><img src="ISTORIC.png"></a></li>
-                <li><a href="#orasul"><img src="OBSTEA.png"></a></li>
-                <li><a href="#tabere"><img src="TABERELE.png"></a></li>
-                <li><a href="#stiri"><img src="STIRI.png"></a></li>
-                <li><a href="#contact"><img src="CONTACT.png"></a></li>
-                <li><a href="#magazin"><img src="MAGAZIN.png"></a></li>
+                <li><a href="#despre"><img src="DESPRE.png" alt="Despre"></a></li>
+                <li><a href="#istoric"><img src="ISTORIC.png" alt="Istoric"></a></li>
+                <li><a href="#orasul"><img src="OBSTEA.png" alt="Obștea"></a></li>
+                <li><a href="#tabere"><img src="TABERELE.png" alt="Tabere"></a></li>
+                <li><a href="#stiri"><img src="STIRI.png" alt="Știri"></a></li>
+                <li><a href="#contact"><img src="CONTACT.png" alt="Contact"></a></li>
+                <li><a href="#magazin"><img src="MAGAZIN.png" alt="Magazin"></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-       <div class="image-container">
-	  
-  <img src="oasa image2.png" alt="Background Image" class="background">
-  
-  <div class="overlay-text">
-    <h1>Manastirea Oașa</h1>
-    <p>Nu poți înțelege decât ceea ce trăiești.
-Oașa este experiență, este trăire, viață, relație interpersonală.</p>
-      </div>
-  
-  <div id="animatedClouds">
-    <img src="white cloud.png" alt="Cloud" class="cloud">
-  </div>
-</div>
-
-<!-- New cloud animation ahead of the first cloud -->
-<div class="animated-cloud-ahead">
-  <img src="white cloud.png" alt="Cloud Ahead" class="cloud-ahead">
-</div>
-    </br>
-	    </br>
-	    </br>
-	    </br>
-            <div class="image-section">
-                <img src="forest-image.png" alt="Background Image" class="background">
+        <!-- Main image container with clouds and overlay -->
+        <div class="image-container">
+            <img src="oasa image2.png" alt="Background Image" class="background">
+            <div class="overlay-text">
+                <h1>Manastirea Oașa</h1>
+                <p>Nu poți înțelege decât ceea ce trăiești.<br>Oașa este experiență, este trăire, viață, relație interpersonală.</p>
             </div>
-        
-		<!-- Two-column layout below the second image -->
-<div class="two-columns">
-  <div class="column text-column">
-    <h2>About Oașa Monastery</h2>
-    <p>
-      Oașa Monastery is a serene retreat located in the heart of the Carpathian Mountains. Surrounded by breathtaking landscapes, 
-      it offers visitors a spiritual escape and a connection with nature.
-    </p>
-  </div>
-</br>
-  <div class="column image-column">
-    <img src="istoric.png" alt="Mountain Landscape">
-  </div>
-</div>
+            <div id="animatedClouds">
+                <img src="white cloud.png" alt="Cloud" class="cloud">
+            </div>
+            <div class="animated-cloud-ahead">
+                <img src="white cloud.png" alt="Cloud Ahead" class="cloud-ahead">
+            </div>
+        </div>
 
+        <!-- Secondary image with two-column layout -->
+        <br><br><br><br>
+        <div class="image-section">
+            <img src="forest-image.png" alt="Forest Image" class="background">
+        </div>
+        <div class="two-columns">
+            <div class="column text-column">
+                <h2>About Oașa Monastery</h2>
+                <p>Oașa Monastery is a serene retreat located in the heart of the Carpathian Mountains. Surrounded by breathtaking landscapes, it offers visitors a spiritual escape and a connection with nature.</p>
+            </div>
+            <div class="column image-column">
+                <img src="istoric.png" alt="Mountain Landscape">
+            </div>
+        </div>
+
+        <!-- Quote Section -->
         <section class="quote">
-            <blockquote>
-                "În munți găsești liniște și pace, un loc unde sufletul respiră."
-            </blockquote>
+            <blockquote>"În munți găsești liniște și pace, un loc unde sufletul respiră."</blockquote>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 Mănăstirea Oașa. Toate drepturile rezervate.</p>
     </footer>
+
+    <!-- JavaScript to manage cloud animations -->
+    <script>
+        // Select both cloud animations
+        const clouds = document.querySelectorAll("#animatedClouds, .animated-cloud-ahead");
+
+        // Loop through each cloud animation
+        clouds.forEach(cloud => {
+            // Listen for the end of the animation
+            cloud.addEventListener("animationend", () => {
+                cloud.style.display = "none"; // Hide the cloud after it leaves the screen
+            });
+        });
+    </script>
 </body>
 </html>
-
-<script>
-  // Select both cloud animations
-  const clouds = document.querySelectorAll("#animatedClouds, .animated-cloud-ahead");
-
-  // Loop through each cloud animation
-  clouds.forEach(cloud => {
-    // Listen for the end of the animation
-    cloud.addEventListener("animationend", () => {
-      cloud.style.display = "none"; // Hide the cloud after it leaves the screen
-    });
-  });
-</script>
-
