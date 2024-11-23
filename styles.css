@@ -58,7 +58,7 @@ body {
 }
 
 /* Responsive for mobile: text lower */
-@media (max-width: 268px) {
+@media (max-width: 768px) {
   .overlay-text {
     bottom: -25%; /* Lower on mobile */
     font-size: 1rem; /* Slightly smaller font */
