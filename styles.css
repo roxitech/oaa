@@ -47,7 +47,7 @@ body {
 /* Default for desktop: text higher */
 .overlay-text {
   position: absolute;
-  bottom: -105%; /* Higher on desktop */
+  bottom: -100%; /* Higher on desktop */
   left: 50%;
   transform: translateX(-50%);
   color: black;
@@ -103,6 +103,7 @@ body {
   top: -200%; /* Move higher */
   opacity: 1;
   left: -100%; /* Start off-screen to the left */
+  right: 100%;
   z-index: 2;
   animation: slideRight 5s infinite linear; /* Move from left to right */
 }
