@@ -58,7 +58,7 @@ body {
 }
 
 /* Responsive for mobile: text lower */
-@media (max-width: 568px) {
+@media (max-width: 268px) {
   .overlay-text {
     bottom: -25%; /* Lower on mobile */
     font-size: 1rem; /* Slightly smaller font */
@@ -171,7 +171,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better styling */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 268px) {
   .image-section {
     top: -150px; /* Reduce space for desktop */
   }
