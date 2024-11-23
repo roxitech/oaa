@@ -188,6 +188,16 @@ img, .cloud-ahead, .cloud {
   height: auto;
 }
 
+body {
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+* {
+  box-sizing: border-box; /* Ensure padding/margin doesn't expand element size */
+}
+
+
 
 /* Quote Section */
 .quote {
