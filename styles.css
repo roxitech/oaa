@@ -52,7 +52,7 @@ body {
 /* Overlay text on the image */
 .overlay-text {
     position: absolute;
-    bottom: 20%; /* Adjust position for mobile */
+    bottom: -25%; /* Adjust position for mobile */
     left: 50%;
     transform: translateX(-50%);
     color: black;
@@ -67,15 +67,6 @@ body {
     .overlay-text {
         font-size: 1rem;
     }
-}
-
-/* Clouds animation */
-#animatedClouds, .animated-cloud-ahead {
-    position: absolute;
-    bottom: 0;
-    width: 100vw; /* Constrain width */
-    height: auto;
-    overflow: hidden; /* Ensure clouds disappear outside bounds */
 }
 
 .cloud, .cloud-ahead {
