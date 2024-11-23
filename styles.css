@@ -69,6 +69,15 @@ body {
     }
 }
 
+/* Clouds animation */
+#animatedClouds, .animated-cloud-ahead {
+    position: absolute;
+    bottom: 0;
+    width: 100vw; /* Constrain width */
+    height: auto;
+    overflow: hidden; /* Ensure clouds disappear outside bounds */
+}
+
 .cloud, .cloud-ahead {
     width: 150%; /* Extra width for smooth animation */
     height: auto;
