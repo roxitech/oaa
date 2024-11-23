@@ -4,6 +4,11 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+* {
+    box-sizing: border-box; /* Ensure padding/margin doesn't expand element size */
 }
 
 /* Header navigation */
@@ -30,188 +35,133 @@ body {
     color: #0077ff;
 }
 
+/* Image container for main content */
 .image-container {
-  position: relative;
-  width: 100vw;
-  height: auto;
-  overflow: hidden; /* Prevent clouds from showing outside the container */
+    position: relative;
+    width: 100vw; /* Match viewport width */
+    height: auto;
+    overflow: hidden; /* Prevent elements from overflowing */
 }
 
 .background {
-  width: 100vw;
-  height: auto;
-  object-fit: cover;
-    overflow: hidden;
+    width: 100vw; /* Match viewport width */
+    height: auto;
+    object-fit: cover;
 }
 
-/* Ensure text overlay at bottom center */
-/* Default for desktop: text higher */
+/* Overlay text on the image */
 .overlay-text {
-  position: absolute;
-  bottom: -100%; /* Higher on desktop */
-  left: 50%;
-  transform: translateX(-50%);
-  color: black;
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1.2rem;
+    position: absolute;
+    bottom: 20%; /* Adjust position for mobile */
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
 }
 
-/* Responsive for mobile: text lower */
+/* Responsive for mobile */
 @media (max-width: 768px) {
-  .overlay-text {
-    bottom: 20%; /* Lower on mobile */
-    font-size: 1rem; /* Slightly smaller font */
-    padding: 8px 16px; /* Adjust padding for smaller screens */
-  }
+    .overlay-text {
+        font-size: 1rem;
+    }
 }
 
-#animatedClouds {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100vw; /* Full width of the container */
-  height: auto; /* Half the height of the container for the cloud */
-  display: flex;
-    overflow: hidden;
-  z-index: 2;
-  animation: slideLeft 5s infinite linear; /* Move from right to left */
-}
-
-.cloud {
-  object-fit: contain;
-    width: 150%;
-    animation: slideLeft 5s infinite linear;
-  opacity: 1;
-  position: absolute;
-  top: -60%; /* Positioning cloud exactly where you want it */
-}
-
-.animated-cloud-ahead {
-  position: relative;
-    overflow: hidden;
-  width: 100vw;
+/* Clouds animation */
+#animatedClouds, .animated-cloud-ahead {
+    position: absolute;
     bottom: 0;
-    top: -200%; /* Move higher */
-  height: auto;
-  z-index: 3;
-  animation: slideAhead 5s infinite linear;
+    width: 100vw; /* Constrain width */
+    height: auto;
+    overflow: hidden; /* Ensure clouds disappear outside bounds */
+}
+
+.cloud, .cloud-ahead {
+    width: 150%; /* Extra width for smooth animation */
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    animation: slideLeft 5s infinite linear; /* Move clouds left */
 }
 
 .cloud-ahead {
-    width: 150%;
-  position: absolute;
-    animation: slideLeft 5s infinite linear;
-  top: -200%; /* Move higher */
-  opacity: 1;
-  left: -100%; /* Start off-screen to the left */
-  z-index: 2;
-  animation: slideRight 5s infinite linear; /* Move from left to right */
+    animation: slideRight 5s infinite linear; /* Opposite animation for second cloud */
 }
 
-
-.image-section {
-  width: 100%;
-  height: 100%;
-}
-
+/* Keyframes for cloud movement */
 @keyframes slideLeft {
-  0% {
-    transform: translateX(100%);
-      opacity: 1;
-  }
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 1;
+    }
     80% {
-    opacity: 1; /* Fully visible for most of the animation */
-  }
-  100% {
-    transform: translateX(-100%);
-      opacity: 0; /* Gradually fade out */
-  }
+        opacity: 1; /* Fully visible most of the time */
+    }
+    100% {
+        transform: translateX(-100%); /* Move off-screen to the left */
+        opacity: 0; /* Gradually fade out */
+    }
 }
 
 @keyframes slideRight {
-  0% {
-    transform: translateX(-100%); /* Start fully off-screen to the left */
-    opacity: 1;
-  }
-  80% {
-    opacity: 1; /* Fully visible for most of the animation */
-  }
-  100% {
-    transform: translateX(200%); /* Move fully off-screen to the right */
-    opacity: 0; /* Gradually fade out */
-  }
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 1;
+    }
+    80% {
+        opacity: 1; /* Fully visible most of the time */
+    }
+    100% {
+        transform: translateX(100%); /* Move off-screen to the right */
+        opacity: 0; /* Gradually fade out */
+    }
 }
 
+/* Section below the main image */
+.image-section {
+    width: 100vw; /* Match viewport width */
+    height: auto;
+}
 
 .two-columns {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 20px;
-  padding: 20px;
-  gap: 20px; /* Space between columns */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 20px; /* Space between columns */
 }
 
 .column {
-  flex: 1; /* Columns take equal width */
+    flex: 1; /* Columns take equal width */
 }
 
 .text-column {
-  padding: 10px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
 }
 
 .image-column img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px; /* Optional: Add rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better styling */
-}
-
-@media (min-width: 268px) {
-  .image-section {
-    top: -150px; /* Reduce space for desktop */
-  }
-
-  .overlay-text {
-    bottom: 70%; /* Adjust overlay higher for desktop */
-  }
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
 }
 
 @media (max-width: 768px) {
-  .two-columns {
-    flex-direction: column;
-  }
-  
-  .column {
-    width: 100%;
-  }
+    .two-columns {
+        flex-direction: column; /* Stack columns */
+    }
+
+    .column {
+        width: 100%;
+    }
 }
-
-body {
-  overflow-x: hidden;
-}
-
-img, .cloud-ahead, .cloud {
-  max-width: 100%;
-  height: auto;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-* {
-  box-sizing: border-box; /* Ensure padding/margin doesn't expand element size */
-}
-
-
 
 /* Quote Section */
 .quote {
