@@ -6,19 +6,29 @@ body {
     color: #333;
 }
 
-/* Add this CSS */
+/* Prevent horizontal scrolling */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure images fit */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Center container content */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%; /* Restrict to screen width */
-  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.container img {
-  max-width: 50%; /* Adjust image size */
-  width: 100%; /* Fluid resizing */
-}
 
 /* Header navigation */
 .header {
