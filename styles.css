@@ -4,11 +4,6 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-* {
-    box-sizing: border-box; /* Ensure padding/margin doesn't expand element size */
 }
 
 /* Header navigation */
@@ -35,133 +30,147 @@ body {
     color: #0077ff;
 }
 
-/* Image container for main content */
+
 .image-container {
-    position: relative;
-    width: 100vw; /* Match viewport width */
-    height: auto;
-    overflow: hidden; /* Prevent elements from overflowing */
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .background {
-    width: 100vw; /* Match viewport width */
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-/* Overlay text on the image */
+/* Ensure text overlay at bottom center */
+/* Default for desktop: text higher */
 .overlay-text {
-    position: absolute;
-    bottom: -25%; /* Adjust position for mobile */
-    left: 50%;
-    transform: translateX(-50%);
-    color: black;
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1.2rem;
+  position: absolute;
+  bottom: 20%; /* Higher on desktop */
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
 }
 
-/* Responsive for mobile */
-@media (max-width: 768px) {
-    .overlay-text {
-        font-size: 1rem;
-    }
+/* Responsive for mobile: text lower */
+@media (max-width: 168px) {
+  .overlay-text {
+    bottom: -15%; /* Lower on mobile */
+    font-size: 1rem; /* Slightly smaller font */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
 }
 
-/* Clouds animation */
-#animatedClouds, .animated-cloud-ahead {
-    position: absolute;
-    bottom: 0;
-    width: 100vw; /* Constrain width */
-    height: auto;
-    overflow: hidden; /* Ensure clouds disappear outside bounds */
+#animatedClouds {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%; /* Full width of the container */
+  height: 50%; /* Half the height of the container for the cloud */
+  display: flex;
+  z-index: 2;
+  animation: slideLeft 5s infinite linear; /* Move from right to left */
 }
 
-.cloud, .cloud-ahead {
-    width: 150%; /* Extra width for smooth animation */
-    height: auto;
-    object-fit: contain;
-    position: absolute;
-    animation: slideLeft 5s infinite linear; /* Move clouds left */
+.cloud {
+  width: 100%;
+  height: 200%;
+  object-fit: contain;
+  opacity: 1;
+  position: absolute;
+  top: -110%; /* Positioning cloud exactly where you want it */
+}
+
+.animated-cloud-ahead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  animation: slideAhead 5s infinite linear;
 }
 
 .cloud-ahead {
-    animation: slideRight 5s infinite linear; /* Opposite animation for second cloud */
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  position: absolute;
+  top: -80%;
+  opacity: 1;
+  left: -100%; /* Start off-screen to the left */
+  z-index: 2;
+  animation: slideRight 5s infinite linear; /* Move from left to right */
+}
 }
 
-/* Keyframes for cloud movement */
+.image-section {
+  width: 100%;
+  height: auto;
+}
+
 @keyframes slideLeft {
-    0% {
-        transform: translateX(100%); /* Start off-screen to the right */
-        opacity: 1;
-    }
-    80% {
-        opacity: 1; /* Fully visible most of the time */
-    }
-    100% {
-        transform: translateX(-100%); /* Move off-screen to the left */
-        opacity: 0; /* Gradually fade out */
-    }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes slideRight {
-    0% {
-        transform: translateX(-100%); /* Start off-screen to the left */
-        opacity: 1;
-    }
-    80% {
-        opacity: 1; /* Fully visible most of the time */
-    }
-    100% {
-        transform: translateX(100%); /* Move off-screen to the right */
-        opacity: 0; /* Gradually fade out */
-    }
+  0% {
+    transform: translateX(-100%); /* Start fully off-screen to the left */
+  }
+  100% {
+    transform: translateX(200%); /* Move fully off-screen to the right */
+  }
 }
 
-/* Section below the main image */
-.image-section {
-    width: 100vw; /* Match viewport width */
-    height: auto;
-}
+
 
 .two-columns {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 20px;
-    padding: 20px;
-    gap: 20px; /* Space between columns */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 20px;
+  gap: 20px; /* Space between columns */
 }
 
 .column {
-    flex: 1; /* Columns take equal width */
+  flex: 1; /* Columns take equal width */
 }
 
 .text-column {
-    padding: 10px;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #333;
+  padding: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
 }
 
 .image-column img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better styling */
 }
 
-@media (max-width: 768px) {
-    .two-columns {
-        flex-direction: column; /* Stack columns */
-    }
+@media (min-width: 168px) {
+  .image-section {
+    margin-top: -100px; /* Reduce space for desktop */
+  }
 
-    .column {
-        width: 100%;
-    }
+  .overlay-text {
+    bottom: 20%; /* Adjust overlay higher for desktop */
+  }
 }
+
+
 
 /* Quote Section */
 .quote {
