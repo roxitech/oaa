@@ -137,9 +137,9 @@ img {
 
 @keyframes slideLeft {
   0% {
-    transform: translateX(50%);
+    transform: translateX(40%);
   }
-  50% {
+  40% {
     transform: translateX(-100%);
   }
 }
