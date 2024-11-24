@@ -63,18 +63,30 @@
         <p>&copy; 2024 Mănăstirea Oașa. Toate drepturile rezervate.</p>
     </footer>
 
-    <!-- JavaScript to manage cloud animations -->
     <script>
-        // Select both cloud animations
-        const clouds = document.querySelectorAll("#animatedClouds, .animated-cloud-ahead");
+  // Get the animated image element
+  const animatedImage = document.getElementById("animatedImage");
 
-        // Loop through each cloud animation
-        clouds.forEach(cloud => {
-            // Listen for the end of the animation
-            cloud.addEventListener("animationend", () => {
-                cloud.style.display = "none"; // Hide the cloud after it leaves the screen
-            });
-        });
-    </script>
+  // Initialize position and speed
+  let position = 100; // Start at 100% right
+  const speed = 0.5; // Adjust speed for slower or faster movement
+
+  function animate() {
+    position -= speed; // Move left
+    animatedImage.style.right = `${position}%`; // Update position
+
+    // Reset to the right when it goes off-screen
+    if (position <= -50) {
+      position = 1000;
+    }
+
+    requestAnimationFrame(animate); // Call animate for the next frame
+  }
+
+  // Start the animation
+  animate();
+
+
+</script>
 </body>
 </html>
