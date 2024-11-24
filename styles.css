@@ -129,7 +129,6 @@ img {
   z-index: 2;
   animation: slideRight 5s infinite linear; /* Move from left to right */
 }
-}
 
 .image-section {
   width: 100%;
