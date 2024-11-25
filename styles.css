@@ -136,7 +136,7 @@ img {
 }
 
 @keyframes slideLeft {
-  50% {
+  60% {
     transform: translateX(100%);
   }
     100% {
