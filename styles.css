@@ -119,7 +119,7 @@ img {
 }
 
 .cloud-ahead {
-  width: 50%;
+  width: 100%;
   height: 400px;
   object-fit: contain;
   position: absolute;
@@ -189,7 +189,7 @@ img {
   }
 
   .overlay-text {
-    bottom: 50%; /* Adjust overlay higher for desktop */
+    bottom: 80%; /* Adjust overlay higher for desktop */
   }
 }
 
