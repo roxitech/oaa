@@ -311,3 +311,31 @@ img {
     margin: 0 auto; /* Center alignment */
 }
 
+/* For the Title (About Oasa) */
+.about {
+    text-align: center;  /* Center the text */
+    margin: 0 auto;      /* Ensure the section is centered */
+    width: 100%;         /* Ensure it spans full width */
+}
+
+/* For the Footer */
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;  /* Center the footer text */
+    padding: 10px 0;
+    margin: 0 auto;      /* Ensure it’s centered */
+    width: 100%;         /* Ensure it spans full width */
+}
+
+/* Adjustments for Quote Section */
+.quote {
+    background-color: #e6f0ff;
+    padding: 20px;
+    text-align: center;  /* Center the text */
+    font-style: italic;
+    margin: 0 auto;      /* Center the quote section */
+    width: 100%;         /* Ensure it spans full width */
+}
+
+
