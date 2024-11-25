@@ -244,3 +244,46 @@ img {
 .column {
     margin: 0; /* Remove extra space */
 }
+
+/* Two Columns */
+.two-columns {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to stack */
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 20px; /* Space between columns */
+}
+
+.column {
+    flex: 1; /* Columns take equal width */
+    margin: 10px; /* Optional: Add spacing */
+}
+
+@media (max-width: 768px) { /* Adjust for mobile screens */
+    .two-columns {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center-align columns */
+    }
+
+    .column {
+        width: 90%; /* Full width for mobile */
+        margin: 0 auto; /* Center horizontally */
+    }
+}
+
+.text-column {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better styling */
+}
+
