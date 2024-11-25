@@ -71,7 +71,7 @@ img {
 /* Default for desktop: text higher */
 .overlay-text {
   position: absolute;
-  bottom: 20%; /* Higher on desktop */
+  bottom: -15%; /* Higher on desktop */
   left: 50%;
   transform: translateX(-50%);
   color: black;
@@ -84,7 +84,7 @@ img {
 /* Responsive for mobile: text lower */
 @media (max-width: 168px) {
   .overlay-text {
-    bottom: 35%; /* Lower on mobile */
+    bottom: -35%; /* Lower on mobile */
     font-size: 1rem; /* Slightly smaller font */
     padding: 8px 16px; /* Adjust padding for smaller screens */
   }
