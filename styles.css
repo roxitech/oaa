@@ -223,3 +223,26 @@ img {
     text-align: center;
     padding: 10px 0;
 }
+
+    html, body {
+    width: 100%; /* Ensure full width */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+* {
+    box-sizing: border-box; /* Prevent padding/margins from adding extra width */
+}
+
+#animatedClouds, .cloud, .cloud-ahead {
+    max-width: 100%;
+}
+
+.two-columns {
+    margin: 0 auto;
+}
+
+.column {
+    margin: 0; /* Remove extra space */
+}
+
+
