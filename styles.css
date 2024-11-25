@@ -189,7 +189,7 @@ img {
   }
 
   .overlay-text {
-    bottom: 20%; /* Adjust overlay higher for desktop */
+    bottom: 50%; /* Adjust overlay higher for desktop */
   }
 }
 
