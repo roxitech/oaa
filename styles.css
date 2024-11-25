@@ -185,7 +185,7 @@ img {
 
 @media (min-width: 168px) {
   .image-section {
-    margin-top: -100px; /* Reduce space for desktop */
+    margin-top: -80px; /* Reduce space for desktop */
   }
 
   .overlay-text {
