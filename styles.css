@@ -181,7 +181,6 @@ img {
   }
 
 .text-column {
-  padding: 10px;
   font-size: 1rem;
   line-height: 1.5;
   color: #333;
@@ -205,7 +204,9 @@ img {
   }
 }
 
-
+  .about {
+    text-align:center;
+  }
 
 /* Quote Section */
 .quote {
