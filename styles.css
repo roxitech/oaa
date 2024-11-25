@@ -162,6 +162,7 @@ img {
 
 .two-columns {
   display: flex;
+  flex-wrap: wrap; /* Allows columns to stack */
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 20px;
@@ -171,7 +172,17 @@ img {
 
 .column {
   flex: 1; /* Columns take equal width */
+  margin: 10px; /* Optional: Add spacing */
 }
+
+@media (max-width: 768px) { /* Adjust for mobile screens */
+  .two-columns {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .column {
+    width: 100%; /* Full width on mobile */
+  }
 
 .text-column {
   padding: 10px;
