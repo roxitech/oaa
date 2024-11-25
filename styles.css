@@ -130,10 +130,6 @@ img {
   animation: slideRight 5s infinite linear; /* Move from left to right */
 }
 
-.about {
-  text-align:center;
-}
-
 .image-section {
   width: 100%;
   height: auto;
