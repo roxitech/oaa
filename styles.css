@@ -133,6 +133,7 @@ img {
 .image-section {
   width: 100%;
   height: auto;
+    bottom: 50%;
 }
 
 @keyframes slideLeft {
