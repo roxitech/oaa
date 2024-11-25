@@ -139,7 +139,9 @@ img {
   0% {
     transform: translateX(100%);
   }
-
+    70% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes slideRight {
