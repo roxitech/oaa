@@ -1,94 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manastirea Oasa</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="header">
-        <nav class="navbar">
-            <ul>
-                <li><a href="#despre"><img src="DESPRE.png" alt="Despre"></a></li>
-                <li><a href="#tabere"><img src="TABERELE.png" alt="Tabere"></a></li>
-                <li><a href="#contact"><img src="CONTACT.png" alt="Contact"></a></li>
-                <li><a href="#magazin"><img src="MAGAZIN.png" alt="Magazin"></a></li>
-            </ul>
-        </nav>
-    </header>
-
-   <main>
-      <div class="image-container">
-          <video src="lv_0_20250504010812.mp4" autoplay muted loop playsinline class="background"></video>
-    <div class="overlay-text">
-        <h1>Manastirea Oașa</h1>
-        <p>Nu poți înțelege decât ceea ce trăiești. Oașa este experiență, este trăire, viață, relație interpersonală.</p>
-    </div>
-    
-     <!-- Cloud animations -->
-    <div id="animatedClouds">
-        <img src="white cloud.png" alt="Cloud" class="cloud">
-    </div>
-          
-    <div class="animated-cloud-ahead">
-        <img src="white cloud.png" alt="Cloud Ahead" class="cloud-ahead">
-    </div>
-</div>
-   </br></br></br></br></br></br></br></br></br></br></br>
-            <div class="image-section">
-                <img src="forest-image.png" alt="Background Image" class="background">
-            </div>
-
-        <!-- Secondary image with two-column layout -->
-
-              <div class="about">
-                 <h2>About Oașa Monastery</h2>
-            </div>
-        <div class="two-columns">
-            <div class="column text-column">   
-                <p>Oașa Monastery is a serene retreat located in the heart of the Carpathian Mountains. Surrounded by breathtaking landscapes, it offers visitors a spiritual escape and a connection with nature.</p>
-            </div>
-            <div class="column image-column">
-                <img src="istoric.png" alt="Mountain Landscape">
-            </div>
-        </div>
-
-        <!-- Quote Section -->
-        <section class="quote">
-            <blockquote>"În munți găsești liniște și pace, un loc unde sufletul respiră."</blockquote>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Mănăstirea Oașa. Toate drepturile rezervate.</p>
-    </footer>
-</body>
-    <script>
-  // Get the animated image element
-  const animatedImage = document.getElementById("animatedImage");
-
-  // Initialize position and speed
-  let position = 100; // Start at 100% right
-  const speed = 0.5; // Adjust speed for slower or faster movement
-
-  function animate() {
-    position -= speed; // Move left
-    animatedImage.style.right = `${position}%`; // Update position
-
-    // Reset to the right when it goes off-screen
-    if (position <= -50) {
-      position = 1000;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manastirea Oasa</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
 
-    requestAnimationFrame(animate); // Call animate for the next frame
-  }
+    .header {
+      background-color: white;
+      padding: 10px;
+    }
 
-  // Start the animation
-  animate();
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
 
+    .navbar li a img {
+      height: 40px;
+    }
 
-</script>
+    .image-container {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .image-container video.background {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: -400px; /* LOWERED the text significantly */
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      max-width: 90%;
+    }
+
+    #animatedClouds,
+    .animated-cloud-ahead {
+      position: absolute;
+      top: 50px;
+      width: 100%;
+    }
+
+    .cloud,
+    .cloud-ahead {
+      width: 150px;
+      animation: floatClouds 60s linear infinite;
+    }
+
+    @keyframes floatClouds {
+      0% { transform: translateX(100vw); }
+      100% { transform: translateX(-200px); }
+    }
+
+    .image-section {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    .image-section .background {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    .about {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .two-columns {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .column {
+      flex: 1 1 400px;
+      padding: 20px;
+    }
+
+    .text-column {
+      font-size: 18px;
+    }
+
+    .image-column img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+
+    .quote {
+      text-align: center;
+      font-style: italic;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+
+    .footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <ul>
+        <li><a href="#despre"><img src="DESPRE.png" alt="Despre"></a></li>
+        <li><a href="#tabere"><img src="TABERELE.png" alt="Tabere"></a></li>
+        <li><a href="#contact"><img src="CONTACT.png" alt="Contact"></a></li>
+        <li><a href="#magazin"><img src="MAGAZIN.png" alt="Magazin"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="image-container">
+      <video src="lv_0_20250504010812.mp4" autoplay muted loop playsinline class="background"></video>
+      
+      <div class="overlay-text">
+        <h1>Manastirea Oașa</h1>
+        <p>Nu poți înțelege decât ceea ce trăiești. Oașa este experiență, este trăire, viață, relație interpersonală.</p>
+      </div>
+
+      <!-- Cloud animations -->
+      <div id="animatedClouds">
+        <img src="white cloud.png" alt="Cloud" class="cloud">
+      </div>
+      
+      <div class="animated-cloud-ahead">
+        <img src="white cloud.png" alt="Cloud Ahead" class="cloud-ahead">
+      </div>
+    </div>
+
+    </br></br></br></br></br></br></br></br></br></br></br>
+
+    <div class="image-section">
+      <img src="forest-image.png" alt="Background Image" class="background">
+    </div>
+
+    <div class="about">
+      <h2>About Oașa Monastery</h2>
+    </div>
+
+    <div class="two-columns">
+      <div class="column text-column">
+        <p>Oașa Monastery is a serene retreat located in the heart of the Carpathian Mountains. Surrounded by breathtaking landscapes, it offers visitors a spiritual escape and a connection with nature.</p>
+      </div>
+      <div class="column image-column">
+        <img src="istoric.png" alt="Mountain Landscape">
+      </div>
+    </div>
+
+    <section class="quote">
+      <blockquote>"În munți găsești liniște și pace, un loc unde sufletul respiră."</blockquote>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Mănăstirea Oașa. Toate drepturile rezervate.</p>
+  </footer>
+
+  <script>
+    const animatedImage = document.getElementById("animatedImage");
+    let position = 100;
+    const speed = 0.5;
+
+    function animate() {
+      position -= speed;
+      if (animatedImage) {
+        animatedImage.style.right = `${position}%`;
+      }
+
+      if (position <= -50) {
+        position = 1000;
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
