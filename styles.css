@@ -1,41 +1,277 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Overlay Text jos pe mobil</title>
-<style>
-  body {
-    margin: 0; padding: 0; height: 100vh; background: #eee; position: relative;
+/* Base styles */
+body {
+    margin: 0;
     font-family: Arial, sans-serif;
-  }
+    line-height: 1.6;
+    color: #333;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Prevent horizontal scrolling */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure images fit */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Center container content */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Header navigation */
+.header {
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #0077ff;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.background {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ------------------ */
+/* Overlay text - MUTAT JOS PE TOATE */
+/* ------------------ */
+.overlay-text {
+  position: absolute;
+  bottom: 10px; /* mutat jos jos jos pe desktop */
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  max-width: 80vw;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Mobile: păstrează jos jos, font puțin mai mic */
+@media (max-width: 768px) {
   .overlay-text {
-    position: absolute;
-    bottom: 65%;
+    bottom: 10px !important; /* jos jos jos */
     left: 50%;
     transform: translateX(-50%);
-    color: black;
-    background: rgba(255,255,255,0.8);
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    max-width: 80vw;
-    text-align: center;
-    z-index: 10;
+    font-size: 1rem;
+    padding: 8px 16px;
+    top: auto !important;
   }
-  @media (max-width: 768px) {
-    .overlay-text {
-      bottom: 20px !important;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1rem;
-      padding: 8px 16px;
-      top: auto !important;
-    }
+}
+
+#animatedClouds {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%; /* Full width of the container */
+  height: 50%; /* Half the height of the container for the cloud */
+  display: flex;
+  z-index: 2;
+  animation: slideLeft 5s infinite linear; /* Move from right to left */
+}
+
+.cloud {
+  width: 100%;
+  height: 200%;
+  object-fit: contain;
+  opacity: 1;
+  position: absolute;
+  top: -110%; /* Positioning cloud exactly where you want it */
+}
+
+.animated-cloud-ahead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  animation: slideAhead 5s infinite linear;
+}
+
+.cloud-ahead {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  position: absolute;
+  top: -80%;
+  opacity: 1;
+  left: -100%; /* Start off-screen to the left */
+  z-index: 2;
+  animation: slideRight 5s infinite linear; /* Move from left to right */
+}
+
+.image-section {
+  width: 100%;
+  height: auto;
+  bottom: 50%;
+}
+
+@keyframes slideLeft {
+  64% {
+    transform: translateX(100%);
   }
-</style>
-</head>
-<body>
-  <div class="overlay-text">Textul meu este jos pe mobil și mai sus pe desktop.</div>
-</body>
-</html>
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%); /* Start fully off-screen to the left */
+  }
+  100% {
+    transform: translateX(200%); /* Move fully off-screen to the right */
+  }
+}
+
+/* Two columns */
+.two-columns {
+  display: flex;
+  flex-wrap: wrap; /* Allows columns to stack */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 20px;
+  gap: 20px; /* Space between columns */
+}
+
+.column {
+  flex: 1; /* Columns take equal width */
+  margin: 10px; /* Optional: Add spacing */
+}
+
+@media (max-width: 768px) { /* Adjust for mobile screens */
+  .two-columns {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center-align columns */
+  }
+
+  .column {
+    width: 90%; /* Full width for mobile */
+    margin: 0 auto; /* Center horizontally */
+  }
+}
+
+.text-column {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.image-column img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better styling */
+}
+
+/* About Section */
+.about {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Quote Section */
+.quote {
+  background-color: #e6f0ff;
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  margin: 0 auto; /* Center alignment */
+  width: 100%; /* Ensure it spans full width */
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto; /* Center alignment */
+  width: 100%; /* Ensure it spans full width */
+}
+
+/* For the Title (About Oasa) */
+.about {
+  text-align: center;  /* Center the text */
+  margin: 0 auto;      /* Ensure the section is centered */
+  width: 100%;         /* Ensure it spans full width */
+}
+
+/* For the Footer */
+.footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;  /* Center the footer text */
+  padding: 10px 0;
+  margin: 0 auto;      /* Ensure it’s centered */
+  width: 100%;         /* Ensure it spans full width */
+}
+
+/* Adjustments for Quote Section */
+.quote {
+  background-color: #e6f0ff;
+  padding: 20px;
+  text-align: center;  /* Center the text */
+  font-style: italic;
+  margin: 0 auto;      /* Center the quote section */
+  width: 100%;         /* Ensure it spans full width */
+}
+
+html, body {
+  width: 100%; /* Ensure full width */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+* {
+  box-sizing: border-box; /* Prevent padding/margins from adding extra width */
+}
+
+#animatedClouds, .cloud, .cloud-ahead {
+  max-width: 100%;
+}
+
+.two-columns {
+  margin: 0 auto;
+}
+
+.column {
+  margin: 0; /* Remove extra space */
+}
