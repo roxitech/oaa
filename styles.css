@@ -70,6 +70,7 @@ img {
 /* Ensure text overlay at bottom center */
 /* Default for desktop: text higher */
 .overlay-text {
+  position: absolute;
   
   color: black;
   
