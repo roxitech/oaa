@@ -84,7 +84,7 @@ img {
 /* Responsive for mobile: text lower */
 @media (max-width: 168px) {
   .overlay-text {
-    top: -35%; /* Lower on mobile */
+    top: -65%; /* Lower on mobile */
     font-size: 1rem; /* Slightly smaller font */
     padding: 8px 16px; /* Adjust padding for smaller screens */
   }
