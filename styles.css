@@ -73,7 +73,6 @@ img {
   position: absolute;
   bottom: 65%; /* Higher on desktop */
   
-  transform: translateX(-50%);
   color: black;
   
   padding: 10px 20px;
