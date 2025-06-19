@@ -1,169 +1,348 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Base styles */
 body {
-    font-family: 'Arial', sans-serif;
+    margin: 0;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #fff;
     color: #333;
 }
 
-/* Header and Navbar */
+/* Prevent horizontal scrolling */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure images fit */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Center container content */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+/* Header navigation */
 .header {
-    background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #fff;
+    padding: 10px 20px;
 }
 
 .navbar ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    padding: 1rem 0;
-    background-color: white;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar ul li img {
-    height: 30px;
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
-/* Image Container with Video Background */
+.navbar ul li a:hover {
+    color: #0077ff;
+}
+
+
 .image-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .background {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Ensure text overlay at bottom center */
+/* Default for desktop: text higher */
+.overlay-text {
+  position: absolute;
+  bottom: 65%; /* Higher on desktop */
+  left: 20%;
+  transform: translateX(-50%);
+  color: black;
+  
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+/* Responsive for mobile: text lower */
+@media (max-width: 168px) {
+  .overlay-text {
+    top: -65%; /* Lower on mobile */
+    font-size: 1rem; /* Slightly smaller font */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
+}
+
+#animatedClouds {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%; /* Full width of the container */
+  height: 50%; /* Half the height of the container for the cloud */
+  display: flex;
+  z-index: 2;
+  animation: slideLeft 5s infinite linear; /* Move from right to left */
+}
+
+.cloud {
+  width: 100%;
+  height: 200%;
+  object-fit: contain;
+  opacity: 1;
+  position: absolute;
+  top: -110%; /* Positioning cloud exactly where you want it */
+}
+
+.animated-cloud-ahead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  animation: slideAhead 5s infinite linear;
+}
+
+.cloud-ahead {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  position: absolute;
+  top: -80%;
+  opacity: 1;
+  left: -100%; /* Start off-screen to the left */
+  z-index: 2;
+  animation: slideRight 5s infinite linear; /* Move from left to right */
+}
+
+.image-section {
+  width: 100%;
+  height: auto;
+    bottom: 50%;
+}
+
+@keyframes slideLeft {
+  64% {
+    transform: translateX(100%);
+  }
+    100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%); /* Start fully off-screen to the left */
+  }
+  100% {
+    transform: translateX(200%); /* Move fully off-screen to the right */
+  }
+}
+
+
+
+.two-columns {
+  display: flex;
+  flex-wrap: wrap; /* Allows columns to stack */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 20px;
+  gap: 20px; /* Space between columns */
+}
+
+.column {
+  flex: 1; /* Columns take equal width */
+  margin: 10px; /* Optional: Add spacing */
+}
+
+@media (max-width: 768px) { /* Adjust for mobile screens */
+  .two-columns {
+    flex-direction: column; /* Stack columns vertically */
+      .overlay-text::after {
+    content: "Shorter text for mobile."; /* Mobile-specific text */
+    display: inline; /* Show this version */
+  }
+
+  .overlay-text::before {
+    content: ""; /* Hide the desktop text on mobile */
+    display: none;
+  }
+  }
+
+  .column {
+    width: 90%; /* Full width on mobile */
+  }
+
+.text-column {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.image-column img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better styling */
+}
+
+@media (min-width: 168px) {
+  .image-section {
+    margin-top: -80px; /* Reduce space for desktop */
+  }
+
+  .overlay-text {
+    bottom: -30%; /* Adjust overlay higher for desktop */
+  }
+}
+
+  .about {
+    text-align:center;
+  }
+
+/* Quote Section */
+.quote {
+    background-color: #e6f0ff;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+    html, body {
+    width: 100%; /* Ensure full width */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+* {
+    box-sizing: border-box; /* Prevent padding/margins from adding extra width */
+}
+
+#animatedClouds, .cloud, .cloud-ahead {
+    max-width: 100%;
+}
+
+.two-columns {
+    margin: 0 auto;
+}
+
+.column {
+    margin: 0; /* Remove extra space */
+}
+
+/* Two Columns */
+.two-columns {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to stack */
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 20px; /* Space between columns */
+}
+
+.column {
+    flex: 1; /* Columns take equal width */
+    margin: 10px; /* Optional: Add spacing */
+}
+
+@media (max-width: 768px) { /* Adjust for mobile screens */
+    .two-columns {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center-align columns */
+    }
+
+    .column {
+        width: 90%; /* Full width for mobile */
+        margin: 0 auto; /* Center horizontally */
+    }
+}
+
+.text-column {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.image-column img {
     width: 100%;
     height: auto;
     object-fit: cover;
-}
-
-/* Overlay Text – moved into white space */
-.overlay-text {
-    position: static; /* default position to follow document flow */
-    background-color: white;
-    text-align: center;
-    padding: 3rem 1rem 2rem;
-}
-
-.overlay-text h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #222;
-}
-
-.overlay-text p {
-    font-size: 1rem;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* Clouds */
-#animatedClouds, .animated-cloud-ahead {
-    position: absolute;
-    top: 10%;
-    width: 100%;
-    z-index: 1;
-}
-
-.cloud,
-.cloud-ahead {
-    width: 100px;
-    opacity: 0.8;
-}
-
-/* Image Section */
-.image-section {
-    width: 100%;
-    margin: 2rem 0;
-}
-
-.image-section img {
-    width: 100%;
-    height: auto;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better styling */
 }
 
 /* About Section */
 .about {
     text-align: center;
-    margin: 3rem 1rem 1rem;
-}
-
-.about h2 {
-    font-size: 1.8rem;
-    color: #222;
-}
-
-/* Two Column Layout */
-.two-columns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.column {
-    width: 100%;
-    max-width: 600px;
-}
-
-.text-column p {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.6;
-}
-
-.image-column img {
-    width: 100%;
-    border-radius: 8px;
+    margin: 0 auto;
 }
 
 /* Quote Section */
 .quote {
-    background-color: #f4f4f4;
-    padding: 2rem 1rem;
+    background-color: #e6f0ff;
+    padding: 20px;
     text-align: center;
     font-style: italic;
-    color: #666;
+    margin: 0 auto; /* Center alignment */
 }
 
 /* Footer */
 .footer {
-    background-color: #333;
-    color: white;
+    background-color: #222;
+    color: #fff;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 3rem;
+    padding: 10px 0;
+    margin: 0 auto; /* Center alignment */
 }
 
-/* Responsive – Tablet & Desktop */
-@media (min-width: 768px) {
-    .overlay-text h1 {
-        font-size: 2.5rem;
-    }
+/* For the Title (About Oasa) */
+.about {
+    text-align: center;  /* Center the text */
+    margin: 0 auto;      /* Ensure the section is centered */
+    width: 100%;         /* Ensure it spans full width */
+}
 
-    .overlay-text p {
-        font-size: 1.125rem;
-    }
+/* For the Footer */
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;  /* Center the footer text */
+    padding: 10px 0;
+    margin: 0 auto;      /* Ensure it’s centered */
+    width: 100%;         /* Ensure it spans full width */
+}
 
-    .two-columns {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .column {
-        flex: 1;
-        padding: 0 1rem;
-    }
+/* Adjustments for Quote Section */
+.quote {
+    background-color: #e6f0ff;
+    padding: 20px;
+    text-align: center;  /* Center the text */
+    font-style: italic;
+    margin: 0 auto;      /* Center the quote section */
+    width: 100%;         /* Ensure it spans full width */
 }
