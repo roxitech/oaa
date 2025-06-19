@@ -71,7 +71,7 @@ img {
 /* Default for desktop: text higher */
 .overlay-text {
   position: absolute;
-  bottom: 65%; /* Higher on desktop */
+  bottom: 15%; /* Higher on desktop */
   
   color: black;
   
